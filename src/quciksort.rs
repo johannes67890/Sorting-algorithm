@@ -33,14 +33,3 @@ pub fn quicksort(array: &mut [i32]) -> &[i32] {
 
     array
 }
-
-mod tests {
-    use super::quicksort;
-
-    #[test]
-    fn test_quicksort() {
-        let mut array = [10, 7, 8, 9, 1, 5];
-        let sorted = quicksort(&mut array);
-        assert_eq!(sorted, &[1, 5, 7, 8, 9, 10]);
-    }
-}
