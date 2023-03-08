@@ -4,6 +4,12 @@ mod quciksort;
 pub use bubblesort::bubblesort;
 pub use quciksort::quicksort;
 
+// pub fn generate_random_array(salt: i8, range: i32) -> &[i32]{
+//     let mut arr = [];
+//     &arr
+// }
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
