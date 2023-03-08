@@ -1,4 +1,3 @@
-
 /// # Quicksort
 /// 
 /// The Quicksort algoritm is a Divide and Conquer algorithm. 
