@@ -4,7 +4,7 @@ use sorting_algorithm::quicksort;
 use sorting_algorithm::generate_random_array;
 
 fn sort_arrays_benchmark(c: &mut Criterion) {
-    let mut arr = black_box([-2,-7,2,10,20,9]);
+    let mut arr = black_box([-2,-7 ,2 ,10 ,20 ,9]);
 
     c.bench_function("Bubble Sort", |b| b.iter(|| bubblesort(&mut arr)));
     c.bench_function("Quick Sort", |b| b.iter(|| quicksort(&mut arr)));
