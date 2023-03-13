@@ -1,8 +1,8 @@
-mod bubblesort;
-mod quicksort;
+mod bubble_sort;
+mod quick_sort;
 
-pub use bubblesort::bubblesort;
-pub use quicksort::quicksort;
+pub use bubble_sort::bubblesort;
+pub use quick_sort::quicksort;
 
 use rand::Rng;
 use std::{ops::Range, ops::RangeBounds, ops::Bound};
