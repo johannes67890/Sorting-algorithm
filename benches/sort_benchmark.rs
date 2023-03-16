@@ -11,7 +11,7 @@ fn sort_arrays_benchmark(c: &mut Criterion) {
 }
 
 fn sort_random_arrays_benchmark(c: &mut Criterion){
-    let mut random_arr = generate_random_array(4, 0..5);
+    let mut random_arr = black_box(generate_random_array(4, 0..5));
     c.bench_function("Bubble Sort - Random array", |b| b.iter(|| bubblesort(&mut random_arr)));
     c.bench_function("Quick Sort - Random array", |b| b.iter(|| quicksort(&mut random_arr)));
 }
