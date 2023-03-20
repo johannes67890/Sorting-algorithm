@@ -1,13 +1,10 @@
-use std::vec;
-
-
 pub fn mergesort<T: Ord + Clone>(arr: &mut [T]) {
-    sort(arr, 0, (arr.len() - 1));
+    sort(arr, 0, arr.len() - 1);
 }
 
 fn sort<T: Ord + Clone>(arr: &mut [T], left: usize, right: usize) {
 
-    if(left >= right) { // recursive 
+    if left >= right { // recursive 
         return;
     }
     let mid: usize = (left + right) / 2; // Middle index of array
