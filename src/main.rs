@@ -1,6 +1,6 @@
 use  sorting_algorithm::generate_random_array;
 fn main(){
-    let arr = generate_random_array(0..100, 1000);
+    let arr = generate_random_array(0..100, 10000);
     let mut j = 0;
     for i in arr.iter(){
       
