@@ -73,4 +73,10 @@ mod tests {
         mergesort(&mut arr);
         assert_eq!(arr, [-2, 1, 2, 4, 5, 6, 9]);
     }
+    #[test]
+    fn test_shell_sort(){
+        let mut arr = [6, 2, 4, 1, 9, -2, 5];
+        shellsort(&mut arr);
+        assert_eq!(arr, [-2, 1, 2, 4, 5, 6, 9]);
+    }
 }
