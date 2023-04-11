@@ -4,6 +4,7 @@ use sorting_algorithm::bubblesort;
 use sorting_algorithm::mergesort;
 use sorting_algorithm::quicksort;
 use sorting_algorithm::insertionsort;
+use sorting_algorithm::shellsort;
 
 fn sorting_benchmarks(c: &mut Criterion) {
     let mut group = c.benchmark_group("Sorting Algorithms");
@@ -44,6 +45,15 @@ fn sorting_benchmarks(c: &mut Criterion) {
                 BatchSize::SmallInput,
             )
         });
+        // Shell sort benchmark (Time complexity: O(nlogn))
+        group.bench_function(BenchmarkId::new("Shell Sort", i), |b| {
+            b.iter_batched_ref(
+                || -> Vec<usize> { (0..i).map(|_| rng.sample(&range)).collect() },
+                |v| shellsort (v),
+                BatchSize::SmallInput,
+            )
+        });
+
     }
     group.finish();
 }

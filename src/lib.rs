@@ -2,11 +2,13 @@ mod bubble_sort;
 mod quick_sort;
 mod insertion_sort;
 mod merge_sort;
+mod shell_sort;
 
 pub use bubble_sort::bubblesort;
 pub use quick_sort::quicksort;
 pub use insertion_sort::insertionsort;
 pub use merge_sort::mergesort;
+pub use shell_sort::shellsort;
 
 use rand::Rng;
 use std::{ops::Range, ops::RangeBounds, ops::Bound};
