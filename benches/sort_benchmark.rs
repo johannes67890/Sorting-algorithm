@@ -1,10 +1,6 @@
 use criterion::{criterion_group, criterion_main, BenchmarkId, Criterion, BatchSize};
 use rand::{distributions::Uniform, Rng};
-use sorting_algorithm::bubblesort;
-use sorting_algorithm::mergesort;
-use sorting_algorithm::quicksort;
-use sorting_algorithm::insertionsort;
-use sorting_algorithm::shellsort;
+use sorting_algorithm::{bubblesort, insertionsort, mergesort, quicksort, shellsort};
 
 fn sorting_benchmarks(c: &mut Criterion) {
     let mut group = c.benchmark_group("Sorting Algorithms");
