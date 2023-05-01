@@ -2,11 +2,17 @@
 /// 
 /// The Insertion sort algorithm is a simple sorting algorithm that builds the final sorted array (or list) one item at a time.
 /// 
+/// # Time complexity
+/// * Best case: O(n)
+/// * Average case: O(n^2)
+/// * Worst case: O(n^2)
+/// 
 /// # Ilustration
-/// `arr = [ 8, 5, 9, 2, 7 ]`
+/// ```` ignore
+/// arr = [ 8, 5, 9, 2, 7 ]
 /// 
 /// [ 8, 5, 9, 2, 7 ] -> [ 5, 8, 9, 2, 7 ] -> [ 5, 8, 9, 2, 7 ] -> [ 2, 5, 8, 9, 7 ] -> [ 2, 5, 7, 8, 9 ]
-/// 
+/// ````
 pub fn insertionsort<T: Ord>(array: &mut [T]) {
     let mut n = array.len();
     for i in 1..n {

@@ -4,6 +4,11 @@
 /// The Quicksort algoritm is a Divide and Conquer algorithm. 
 /// Quicksort selects a `pivot` element, and takes the other elements smaller or equal on one side and bigger on the other side.
 /// 
+/// # Time complexity
+/// * Best case: O(n log(n))
+/// * Average case: O(n log(n))
+/// * Worst case: O(n^2)
+/// 
 /// # Ilustration 
 /// ``` ignore
 /// arr = [ 8, 5, 9, 2, 7 ]` (pivot is the last element, in this case 7).

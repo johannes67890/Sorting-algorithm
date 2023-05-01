@@ -9,14 +9,12 @@ pub use quick_sort::quicksort;
 pub use insertion_sort::insertionsort;
 pub use merge_sort::mergesort;
 pub use shell_sort::shellsort;
-
+///
+/// Test sorting algorithms
+///
 #[cfg(test)]
 mod tests {
     use super::*;
-    ///
-    /// Test sorting algorithms
-    /// 
-
     #[test]
     fn test_bubble_sort() {
         let mut arr = [6, 2, 4, 1, 9, -2, 5];

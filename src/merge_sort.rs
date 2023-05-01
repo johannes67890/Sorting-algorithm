@@ -1,3 +1,45 @@
+/// Merge Sort
+/// 
+/// Merge sort is a divide and conquer algorithm.
+/// 
+/// The pivot point is the middle index of array. It is calculated by `(left index + right index) / 2`.
+/// The array is divided into two subarrays, left and right.
+/// The left subarray is sorted by recursively calling the merge sort function.
+/// The right subarray is sorted by recursively calling the merge sort function, after the left subarray is sorted.
+/// At the end, the two subarrays are merged into one sorted array.
+/// 
+/// # Time complexity
+/// * Best case: O(n log n)
+/// * Average case: O(n log n)
+/// * Worst case: O(n log n)
+/// 
+/// # Ilustration 
+/// ``` ignore
+/// arr = [ 8, 5, 9, 2, 7 ]`
+///       if left index < right index -> pivot point = (left index + right index) / 2
+///                 
+///                   <-- Left Index          Right Index -->
+/// 
+///                              [ 8, 5, 9, 2, 7 ]        --> pivot point = 2
+///                                      |                                
+///                       / -------------------------------\ 
+///                  [ 8, 5, 9 ]                         [ 2, 7 ]
+///                      |                                  |
+///           [ 8, 5 ] ------ [9]                     [2] ----- [7]   
+///                      |                                  |      
+///          [ 8 ] -- [ 5 ] -- [  ]                         |            -> sort and merge the two subarrays into one sorted array
+///                     |                                   |
+///          [ 5 ] -- [ 8 ] -- [ 9 ]                 [ 2 ] -- [ 7 ]
+///                     |                                   |
+///            [ 5, 8 ] -- [ 9 ]                         [ 2, 7 ]
+///                     |                                   |
+///                [ 5, 8, 9 ]                              |
+///                     |                                   |
+///                      \-----    [ 2, 5, 7, 8, 9 ]   ---- /
+///                                 
+/// ```
+/// [See detailed illustration of Merge sort in action](https://media.geeksforgeeks.org/wp-content/uploads/20220722205737/MergeSortTutorial.png)
+/// 
 pub fn mergesort<T: Ord + Clone>(arr: &mut [T]) {
     sort(arr, 0, arr.len() - 1);
 }
