@@ -1,15 +1,17 @@
-mod bubblesort;
-mod quciksort;
+mod bubble_sort;
+mod quick_sort;
+mod insertion_sort;
+mod merge_sort;
+mod shell_sort;
 
-pub use bubblesort::bubblesort;
-pub use quciksort::quicksort;
-
-// pub fn generate_random_array(salt: i8, range: i32) -> &[i32]{
-//     let mut arr = [];
-//     &arr
-// }
-
-
+pub use bubble_sort::bubblesort;
+pub use quick_sort::quicksort;
+pub use insertion_sort::insertionsort;
+pub use merge_sort::mergesort;
+pub use shell_sort::shellsort;
+///
+/// Test sorting algorithms
+///
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -23,6 +25,24 @@ mod tests {
     fn test_quick_sort() {
         let mut arr = [6, 2, 4, 1, 9, -2, 5];
         quicksort(&mut arr);
+        assert_eq!(arr, [-2, 1, 2, 4, 5, 6, 9]);
+    }
+    #[test]
+    fn test_insertion_sort(){
+        let mut arr = [6, 2, 4, 1, 9, -2, 5];
+        insertionsort(&mut arr);
+        assert_eq!(arr, [-2, 1, 2, 4, 5, 6, 9]);
+    }
+    #[test]
+    fn test_merge_sort(){
+        let mut arr = [6, 2, 4, 1, 9, -2, 5];
+        mergesort(&mut arr);
+        assert_eq!(arr, [-2, 1, 2, 4, 5, 6, 9]);
+    }
+    #[test]
+    fn test_shell_sort(){
+        let mut arr = [6, 2, 4, 1, 9, -2, 5];
+        shellsort(&mut arr);
         assert_eq!(arr, [-2, 1, 2, 4, 5, 6, 9]);
     }
 }

@@ -1,13 +1,19 @@
-
+/// 
 /// # Quicksort
 /// 
 /// The Quicksort algoritm is a Divide and Conquer algorithm. 
 /// Quicksort selects a `pivot` element, and takes the other elements smaller or equal on one side and bigger on the other side.
 /// 
-/// # Ilustration 
-/// `arr = [ 8, 5, 9, 2, 7 ]` (pivot is the last element, in this case 7).
+/// # Time complexity
+/// * Best case: O(n log(n))
+/// * Average case: O(n log(n))
+/// * Worst case: O(n^2)
 /// 
-///                <-- `less or equal`      `bigger than` -->
+/// # Ilustration 
+/// ``` ignore
+/// arr = [ 8, 5, 9, 2, 7 ]` (pivot is the last element, in this case 7).
+/// 
+///                <-- less or equal           bigger than -->
 /// 
 ///                              [ 8, 5, 9, 2, 7 ]
 ///                                      |
@@ -15,10 +21,11 @@
 ///                  [ 5, 2 ]                            [ 8, 9 ]
 ///                      |                                  |
 ///               [ ] -- 2 -- [5]                    [8] -- 9 -- [ ]   
-///                      |                                  |            <---- `Now we join them back together`
+///                      |                                  |      
 ///                      \-----    [ 2, 5, 7, 8, 9 ]   ---- /
 ///                                  (Sorted array)
-///          
+/// ```
+/// 
 pub fn quicksort<T: Ord>(array: &mut [T]) { // Takes mut array of type 'T'.
     let low: isize = 0; // Index '0' of array
     let high: isize = (array.len() - 1) as isize; // Highest index of array
