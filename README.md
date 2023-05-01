@@ -56,7 +56,7 @@ Line Chart of all supported algoritms from size 1 to 1000 element arrays
 ![Benchmark Image](./assets/1to1000SizeBench.PNG)
 ## Individual Benchmarks (Size 100)
 Benchmarks of all sorting algorithms with size of array of 100 elements. 
-#### Bubble Sort
+### Bubble Sort
 ```
 Sorting Algorithms/Bubble Sort/100
     time:   [8.1996 µs 8.2539 µs 8.3318 µs]
