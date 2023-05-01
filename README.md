@@ -19,12 +19,12 @@ git clone https://github.com/johannes67890/Sorting-algorithm.git
 cargo install
 ```
 ## Usage
-```js
+```
 // Run tests on functions
-> npm test
+$ cargo test
 
 // Run benchmarks on functions
-> npm bench
+$ cargo bench
 ```
 
 ## Showcase
