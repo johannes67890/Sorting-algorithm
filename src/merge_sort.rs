@@ -63,9 +63,9 @@ fn merge<T: Ord + Clone>(arr: &mut [T], left: usize, mid: usize, right: usize) {
     let left_arr: Vec<T> = (0..n1).into_iter().map(|i| arr[left+i].clone() ).collect();
     let right_arr: Vec<T> = (0..n2).into_iter().map(|i| arr[mid + 1 + i].clone() ).collect();
 
-    let mut i:usize = 0;
-    let mut j:usize = 0;
-    let mut k:usize = left;
+    let mut i: usize = 0;
+    let mut j: usize = 0;
+    let mut k: usize = left;
 
     while i < n1 && j < n2 {
         if left_arr[i] <= right_arr[j] {
