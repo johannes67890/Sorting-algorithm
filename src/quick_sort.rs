@@ -39,31 +39,31 @@ fn sort<T: Ord>(arr: &mut [T], low: isize, high: isize){
     if low < high {
         let pivot_element: isize = temp(arr, low, high); // pivot element (always the element of the highest index, in the whole or sub array)
 
-        sort(arr, low, pivot_element - 1); // Before pi
-        sort(arr, pivot_element + 1, high); // After pi
+        sort(arr, low, pivot_element - 1); // Before pivot
+        sort(arr, pivot_element + 1, high); // After pivot
     }
     
     fn temp<T: Ord>(arr: &mut [T], low: isize, high: isize) -> isize {
     let pivot = high as usize; // Pivot element
-    let mut i = low - 1; 
-    let mut j = high;
+    let mut i = low - 1; // Index of smaller element
+    let mut j = high; // Index of bigger element
 
     loop {
             i += 1;
-            while arr[i as usize] < arr[pivot] {
+            while arr[i as usize] < arr[pivot] { // If current element is bigger than pivot element.
                 i += 1;
             }
             j -= 1;
-            while j >= 0 && arr[j as usize] > arr[pivot] {
+            while j >= 0 && arr[j as usize] > arr[pivot] { // If current element is smaller than pivot element.
                 j -= 1;
             }  
-            if i >= j { // If current element is smaller than pivot element.
+            if i >= j { // if pivot element is bigger than current element.
                 break;
             } else {
-                arr.swap(i as usize, j as usize);
+                arr.swap(i as usize, j as usize); // Swap current element with pivot element.
             }
         }
-        arr.swap(i as usize, pivot as usize);
+        arr.swap(i as usize, pivot as usize); // Swap pivot element with current element.
         i
     }
 }

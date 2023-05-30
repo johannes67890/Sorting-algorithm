@@ -26,17 +26,17 @@
 
 pub fn shellsort<T: Ord + Copy>(arr: &mut [T]) {
     let len = arr.len();
-    let mut gap = len / 2;
-    while gap > 0 {
-        for i in gap..len {
-            let temp = arr[i];
-            let mut j = i;
-            while j >= gap && arr[j - gap] > temp {
-                arr[j] = arr[j - gap];
-                j -= gap;
+    let mut gap = len / 2; // Gap value
+    while gap > 0 { // Loop until gap is 1
+        for i in gap..len { 
+            let temp = arr[i]; // Current element
+            let mut j = i; // Index of current element
+            while j >= gap && arr[j - gap] > temp { // If current element is smaller than previous element.
+                arr[j] = arr[j - gap]; // Swap current element with previous element.
+                j -= gap; // Decrement index of current element.
             }
-            arr[j] = temp;
+            arr[j] = temp; // Swap current element with previous element.
         }
-        gap /= 2;
+        gap /= 2; // Decrement gap value.
     }
 }

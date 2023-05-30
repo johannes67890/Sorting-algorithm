@@ -51,22 +51,26 @@ fn sort<T: Ord + Clone>(arr: &mut [T], left: usize, right: usize) {
     }
     let mid: usize = (left + right) / 2; // Middle index of array
 
+    // Divide array into two subarrays, left and right
     sort(arr, left, mid);
     sort(arr, mid + 1, right);
+    // Merge the two subarrays into one sorted array
     merge(arr, left, mid, right);
 }
 
 fn merge<T: Ord + Clone>(arr: &mut [T], left: usize, mid: usize, right: usize) {
-    let n1 = mid - left + 1;
-    let n2 = right - mid;
+    let n1 = mid - left + 1; // size of left subarray
+    let n2 = right - mid; // size of right subarray
 
-    let left_arr: Vec<T> = (0..n1).into_iter().map(|i| arr[left+i].clone() ).collect();
+    // Create two temporary arrays of size n1 and n2 (left and right subarrays)
+    let left_arr: Vec<T> = (0..n1).into_iter().map(|i| arr[left+i].clone() ).collect(); 
     let right_arr: Vec<T> = (0..n2).into_iter().map(|i| arr[mid + 1 + i].clone() ).collect();
 
     let mut i: usize = 0;
     let mut j: usize = 0;
     let mut k: usize = left;
 
+    // Merge the two subarrays into one sorted array
     while i < n1 && j < n2 {
         if left_arr[i] <= right_arr[j] {
             arr[k] = left_arr[i].clone();
@@ -77,13 +81,13 @@ fn merge<T: Ord + Clone>(arr: &mut [T], left: usize, mid: usize, right: usize) {
         }
         k += 1;
     }
-
+    // Copy the remaining elements of left_arr, if there are any
     while i < n1 {
         arr[k] = left_arr[i].clone();
         i += 1;
         k += 1;
     }
-
+    // Copy the remaining elements of right_arr, if there are any
     while j < n2 {
         arr[k] = right_arr[j].clone();
         j += 1;
