@@ -51,7 +51,7 @@ fn sort<T: Ord + Clone>(arr: &mut [T], left: usize, right: usize) {
     }
     let mid: usize = (left + right) / 2; // Middle index of array
 
-    // Divide array into two subarrays, left and right
+    // Divide array into two subarrays, left first then right subarray
     sort(arr, left, mid);
     sort(arr, mid + 1, right);
     // Merge the two subarrays into one sorted array
